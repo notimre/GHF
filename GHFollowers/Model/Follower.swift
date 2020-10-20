@@ -8,6 +8,6 @@
 import UIKit
 
 struct Follower: Codable {
-    var login: String
+    var login2222: String
     var avatarUrl: String
 }

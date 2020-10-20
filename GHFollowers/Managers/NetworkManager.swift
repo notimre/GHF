@@ -13,12 +13,12 @@ class NetworkManager {
     
     private init() {} // this creates a singleton
     
-    func getFollowers(for username: String, page: Int, completed: @escaping([Follower]?, ErrorMessage?) -> Void) {
+    func getFollowers(for username: String, page: Int, completed: @escaping(Result<[Follower], GFError>) -> Void) {
         let endpoint = baseURL + "\(username)/followers?per_page=100&page=\(page)"
         
         guard let url = URL(string: endpoint) else {
-            // we can't call the custom alert here, since it'd be called from a background thread which you can't do
-            completed(nil, .invalidUsername)
+            // we can't call the custom alert here, since it'd be called from a background thread which you can't do so we go
+            completed(.failure(.invalidUsername))
             return
         }
         
@@ -26,16 +26,16 @@ class NetworkManager {
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             
             if let _ = error {
-                completed(nil, .unableToComplete) // often happens when no internet
+                completed(.failure(.unableToComplete)) // often happens when no internet
             }
             
             guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                completed(nil, .invalidResponse)
+                completed(.failure(.invalidResponse))
                 return
             }
             
             guard let data = data else {
-                completed(nil, .invalidData)
+                completed(.failure(.invalidData))
                 return
             }
             
@@ -44,10 +44,11 @@ class NetworkManager {
                 // this is where we set snake_case to camelCase
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 let followers = try decoder.decode([Follower].self, from: data)
-                completed(followers, nil)
+                completed(.success(followers))
+                
             } catch {
                 //completed(nil, error.localizedDescription) // this is a great way to show developers what's wrong with your app, not suitable for users
-                completed(nil, .invalidData)
+                completed(.failure(.invalidData))
             }
         }
         

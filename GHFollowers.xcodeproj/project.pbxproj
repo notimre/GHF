@@ -101,11 +101,11 @@
 			isa = PBXGroup;
 			children = (
 				CF6888C1253F391D00E18D8B /* Cells */,
+				CFAACB3B253DA493001DD546 /* GFAlertVC.swift */,
 				CFB1EE1A253A16A8009CD133 /* GFButton.swift */,
 				CFB1EE1D253A19B1009CD133 /* GFTextField.swift */,
 				CFAACB35253D9F0F001DD546 /* GFTitleLabel.swift */,
 				CFAACB38253DA31D001DD546 /* GFBodyLabel.swift */,
-				CFAACB3B253DA493001DD546 /* GFAlertVC.swift */,
 				CF6888C5253F39BD00E18D8B /* GFAvatarImageView.swift */,
 			);
 			path = "Custom Views";

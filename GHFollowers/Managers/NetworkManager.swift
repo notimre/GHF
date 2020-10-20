@@ -23,8 +23,31 @@ class NetworkManager {
         }
         
         // this is the basic native way to make network calls, you can use anything else to do so too
-        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
             
+            if let _ = error {
+                completed(nil, "Unable to complete your request. Please check your internet connection.") // often happens when no internet
+            }
+            
+            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                completed(nil, "Invalid response from the server. Please try again.")
+                return
+            }
+            
+            guard let data = data else {
+                completed(nil, "The data received from teh server was invalid. Please try again.")
+                return
+            }
+            
+            do {
+                let decoder = JSONDecoder()
+                // this is where we set snake_case to camelCase
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                let followers = try decoder.decode([Follower].self, from: data)
+                completed(followers, nil)
+            } catch {
+                completed(nil, "The data received from teh server was invalid. Please try again.")
+            }
         }
         
         task.resume() // this starts the network call !! don't forget it

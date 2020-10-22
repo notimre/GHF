@@ -9,7 +9,8 @@ import UIKit
 
 class NetworkManager {
     static let shared = NetworkManager() // static means every network manager will have this variable on it????
-    let baseURL = "https://api.github.com/users/"
+    private let baseURL = "https://api.github.com/users/"
+    let cache = NSCache<NSString, UIImage>()
     
     private init() {} // this creates a singleton
     

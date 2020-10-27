@@ -20,7 +20,7 @@ class FavoritesListVC: UIViewController {
                 print(favorites)
             case .failure(let error):
                 break
-            }            
+            }
         }
     }
 }

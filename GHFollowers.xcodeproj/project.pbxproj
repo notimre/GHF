@@ -18,6 +18,7 @@
 		CF51F1BC2546020400E6FA01 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF51F1BB2546020400E6FA01 /* Date+Ext.swift */; };
 		CF51F1BF2546024300E6FA01 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF51F1BE2546024300E6FA01 /* String+Ext.swift */; };
 		CF53D0722541F10100AB0600 /* UserInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF53D0712541F10100AB0600 /* UserInfoVC.swift */; };
+		CF5FBFCE2548607600B3BE3D /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5FBFCD2548607600B3BE3D /* PersistenceManager.swift */; };
 		CF6888B8253EF81F00E18D8B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6888B7253EF81F00E18D8B /* NetworkManager.swift */; };
 		CF6888C3253F394300E18D8B /* FollowerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6888C2253F394300E18D8B /* FollowerCell.swift */; };
 		CF6888C6253F39BD00E18D8B /* GFAvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6888C5253F39BD00E18D8B /* GFAvatarImageView.swift */; };
@@ -52,6 +53,7 @@
 		CF51F1BB2546020400E6FA01 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		CF51F1BE2546024300E6FA01 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		CF53D0712541F10100AB0600 /* UserInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoVC.swift; sourceTree = "<group>"; };
+		CF5FBFCD2548607600B3BE3D /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		CF6888B7253EF81F00E18D8B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		CF6888C2253F394300E18D8B /* FollowerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerCell.swift; sourceTree = "<group>"; };
 		CF6888C5253F39BD00E18D8B /* GFAvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFAvatarImageView.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				CF6888B7253EF81F00E18D8B /* NetworkManager.swift */,
+				CF5FBFCD2548607600B3BE3D /* PersistenceManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				CFB1EDFF253996A8009CD133 /* SceneDelegate.swift in Sources */,
 				CF51F1B02545FAA600E6FA01 /* GFRepoItemVC.swift in Sources */,
 				CF53D0722541F10100AB0600 /* UserInfoVC.swift in Sources */,
+				CF5FBFCE2548607600B3BE3D /* PersistenceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

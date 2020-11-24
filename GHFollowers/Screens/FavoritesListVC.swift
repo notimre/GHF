@@ -78,7 +78,7 @@ extension FavoritesListVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let favorite = favorites[indexPath.row]
-        let destVC = FollowerListVC()
+        let destVC = FollowerListVC(username: favorite.login)
         destVC.username = favorite.login
         destVC.title = favorite.login
         
@@ -96,7 +96,7 @@ extension FavoritesListVC: UITableViewDataSource, UITableViewDelegate {
         
         PersistenceManager.updateWidth(favorite: favorite, actionType: .remove) { [weak self] error in
             guard let self = self else { return }
-            guard let error = error else { return }
+       //     guard let error = error else { return }
             self.presentGFAlertOnMainThread(title: "Unable to remove item", message: "We couldn't remove this user from your favorites list.", buttonTitle: "Ok")
         }
     }

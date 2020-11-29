@@ -7,7 +7,8 @@
 
 import UIKit
 
-struct UIHelper {
+// It's not a struct because we could initalise an empty UIHelper
+enum UIHelper {
   
     static func createThreeColumnFlowLayout(in view: UIView) -> UICollectionViewFlowLayout {
         let width = view.bounds.width // total width of the current screen, doesn't matter which one

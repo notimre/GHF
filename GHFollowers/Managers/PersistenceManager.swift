@@ -14,9 +14,7 @@ enum PersistenceActionType {
 enum PersistenceManager {
     static private let defaults = UserDefaults.standard
     
-    enum Keys {
-        static let favorites = "favorites"
-    }
+    enum Keys { static let favorites = "favorites" }
     
     static func updateWidth(favorite: Follower, actionType: PersistenceActionType, completed: @escaping(GFError?) -> Void) {
         retrieveFavorites { result in
@@ -29,7 +27,6 @@ enum PersistenceManager {
                         completed(.alreadyInFavorites)
                         return
                     }
-                    
                     favorites.append(favorite)
                     
                 case .remove:

@@ -41,7 +41,6 @@ class GFItemInfoVC: UIViewController {
     private func configureBackgroudnView() {
         view.layer.cornerRadius = 18
         view.backgroundColor = .secondarySystemBackground
-        
     }
     
     private func configureStackView() {

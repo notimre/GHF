@@ -28,6 +28,8 @@ class NetworkManager {
             
             if let _ = error {
                 completed(.failure(.unableToComplete)) // often happens when no internet
+           
+                return
             }
             
             guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
@@ -70,6 +72,8 @@ class NetworkManager {
             
             if let _ = error {
                 completed(.failure(.unableToComplete)) // often happens when no internet
+            
+                return
             }
             
             guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {

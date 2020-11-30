@@ -26,6 +26,7 @@ class GFBodyLabel: UILabel {
     private func configure() {
         textColor = .secondaryLabel // light grey color, if you want to download semantic UI app, useful to showcase these texts!
         font = UIFont.preferredFont(forTextStyle: .body)
+        adjustsFontForContentSizeCategory = true
         adjustsFontSizeToFitWidth = true // shrinks it if it doesn't fit
         minimumScaleFactor = 0.75
         lineBreakMode = .byWordWrapping // no need to set the number of lines

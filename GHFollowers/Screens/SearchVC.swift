@@ -20,6 +20,7 @@ class SearchVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground // for white mode it's black, for dark mode it's white
+        view.addSubviews(logoImageView, usernameTextField, callToActionButton)
         configureLogoImageView()
         configureTextField()
         configureCallToActionButton()
@@ -53,7 +54,6 @@ class SearchVC: UIViewController {
     }
     
     func configureLogoImageView() {
-        view.addSubview(logoImageView) // equivalent of grabbing a UIImageView and dropping it to the view in storyboard
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
         logoImageView.image = Images.ghLogo // insertion called "Stringly Typed", sometimes dangerous to do -> it can crash the app
         
@@ -71,7 +71,6 @@ class SearchVC: UIViewController {
     }
     
     func configureTextField() {
-        view.addSubview(usernameTextField)
         usernameTextField.delegate = self // self = SearcVC
 
         NSLayoutConstraint.activate([
@@ -83,7 +82,6 @@ class SearchVC: UIViewController {
     }
     
     func configureCallToActionButton() {
-        view.addSubview(callToActionButton)
         callToActionButton.addTarget(self, action: #selector(pushFollowerListVC), for: .touchUpInside) // touchUpInside is most common
                
         NSLayoutConstraint.activate([
